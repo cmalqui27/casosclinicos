@@ -30,7 +30,7 @@ with st.expander("⚙️ PANEL DOCENTE (Configurar Nuevo Caso)", expanded=False)
     
     # Al presionar este botón, la IA asume la nueva identidad
     if st.button("Cargar Paciente"):
-        modelo = genai.GenerativeModel('gemini-1.5-flash-latest', system_instruction=nuevo_prompt)
+        modelo = genai.GenerativeModel('gemini-1.5-flash', system_instruction=nuevo_prompt)
         st.session_state.chat = modelo.start_chat(history=[])
         st.session_state.chat_history = [
             {"role": "assistant", "content": "(El paciente ha ingresado a la sala. Inicia el interrogatorio)."}
